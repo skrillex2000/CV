@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .post {
+            margin-bottom: 40px;
+        }
+        .post h2 {
+            color: #333;
+        }
+        .post p {
+            color: #555;
+            line-height: 1.6;
+        }
+        .post .full-content {
+            display: none;
+        }
+        .post .read-more {
+            display: block;
+            color: #007bff;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function toggleContent(postId) {
+            var post = document.getElementById(postId);
+            var fullContent = post.querySelector('.full-content');
+            var readMore = post.querySelector('.read-more');
+
+            if (fullContent.style.display === "none") {
+                fullContent.style.display = "block";
+                readMore.style.display = "none";
+            } else {
+                fullContent.style.display = "none";
+                readMore.style.display = "block";
+            }
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <h1>My Blog</h1>
+</header>
+
+<nav>
+    <a href="./index.html">Home</a>
+    <a href="./index.html#about">About</a>
+    <a href="./index.html#contact">Contact</a>
+</nav>
+
+<div class="container">
+    <div class="post" id="post1">
+        <h2>Introduction to Creo Parametric TOOLKIT</h2>
+        <p>Creo Parametric TOOLKIT, developed by Parametric Technology Corporation (PTC), serves as a robust customization toolkit for enhancing Creo Parametric capabilities. It empowers users and third-party developers to extend the functionalities of Creo Parametric by leveraging the C programming language.<span class="read-more" onclick="toggleContent('post1')">Read more...</span></p>
+        <div class="full-content">
+            <p>By seamlessly integrating custom applications developed using Creo Parametric TOOLKIT, users can tailor Creo Parametric to meet specific design and engineering requirements.This toolkit offers a comprehensive library of C functions, enabling safe and controlled access to the Creo Parametric database and applications. With Creo Parametric TOOLKIT as the primary application programmer's interface (API) for Creo Parametric, developers can efficiently interact with and manipulate Creo Parametric's features and functionalities, thus enhancing productivity and enabling advanced customization.</p>
+        </div>
+    </div>
+    <div class="post" id="post2">
+        <h2>Creo 10 Upgrade</h2>
+        <p>PTC has launched Creo 10, boasting enhancements aimed at improving design efficiency and innovation. Key features include:<span class="read-more" onclick="toggleContent('post2')">Read more...</span></p>
+        <div class="full-content">
+            <p>
+                <b>Usability and Productivity</b>: Creo 10 introduces multibody enhancements, improved modeling tools, and streamlined capabilities for easier design organization and understanding.
+                <br/><b>Composites Design and Manufacturing:</b> New features allow designing with composite materials, including ply and core design, simulation of draping, and automated pattern creation.
+                <br/><b>Design for Electrification: </b>Creo 10 offers tools for creating, managing, and collaborating on harness assemblies, along with extended ECAD capabilities.
+                <br/><b>Design for Ergonomics:</b> Enhanced manikins and libraries facilitate designing for user uniqueness, incorporating improved visual field reflection analysis.
+                <br/> <b>Model-Based Definition (MBD) and Detailing:</b> Updates include enhanced annotations, streamlined GD&T workflows, and improved EZ Tolerance usability.
+                <br/><b>Simulation-Driven Design and Generative Design:</b> Creo 10 enhances simulation capabilities, including contact simulation options and improvements in fluid and structural analysis. Generative design features rotational symmetry, mass point constraints, and remote loads.
+                <br/> <b>Advances in Additive and Subtractive Manufacturing:</b> Creo 10 introduces beam-based and formula-driven lattices for additive manufacturing, along with improvements in high-speed milling.
+                <br/><b>Introducing Creo+:</b> PTC launches Creo+, a SaaS product offering Creo's functionality with cloud-based tools for collaboration, license management, and deployment.
+                <br/><br/>Overall, Creo 10 and Creo+ aim to enhance design processes, collaboration, and innovation, offering a suite of tools for efficient and effective product development.</p>
+        </div>
+    </div>
+    <div class="post" id="post3">
+        <h2>BUILD PROCESS</h2>
+        <p>1. Begin by accessing the make_basic file located at<br/> <b>(Creo_APP_DIR)/Common Files/protoolkit/x86e_win64/obj.</b><span class="read-more" onclick="toggleContent('post3')">Read more...</span></p>
+        <div class="full-content">
+            <p>
+                <ul>In the make_basic file, you'll find essential configurations:
+                    <li> #includes File Path: Contains all necessary C/C++ include files.</li>
+                    <li> #Compiler Flags: Includes preprocessor directives required for compilation.</li>
+                    <li> #Libraries: Lists linker libraries needed for the project (usually with a .lib extension).</li>
+                </ul><br/>
+                2. Open Microsoft Visual Studio and create a new project.<br/><br/>
+                3. Choose C++ as the programming language.<br/><br/>
+                4. Select the project type based on your needs, whether it's a Dynamic Link Library (DLL) or Executable(EXE).<br/>
+                <img src="./assets/CreoSetup.PNG" alt="Image Description" width="800"><br/><br/>
+                5. Configure the project for Debug mode and select the x64 platform configuration for 64-bit compatibility.<br/><br/>
+                6. Specify the binary location directory and choose the configuration type (DLL/EXE).<br/><br/>
+                7. Set the Creo include directories to include all necessary toolkit header files:<br/> 
+                <b>(Creo_APP_DIR)/Common Files/protoolkit/includes;<br/>(Creo_APP_DIR)/Common Files/protoolkit/protk_appls/includes;</b><br/><br/>
+                8. Add the following preprocessor directives:<br/> 
+                <b>_WSTDIO_DEFINED;<br/>PRO_USE_VAR_ARGS;</b><br/><br/>
+                9. Under Code Generation, set the Runtime Library to Multi-threaded (/MT).<br/><br/>
+                10. Under Linker, set the Additional Library Directories to:<br/>
+                 <b>(Creo_APP_DIR)\Common Files\protoolkit\x64e_win64\obj</b><br/><br/>
+                11. In the Input section, set the Additional Dependencies to include the following libraries:<br/>
+                <b>protoolkit_NU.lib;pt_asynchronous.lib;ucore.lib;udata.lib;kernel.lib;user32.lib;wssock32.lib;advapi32.lib;mpr.lib;</b><br/><br/>
+            </p>
+        </div>
+    </div>
+    <div class="post" id="post4">
+        <h2>Asynchronous & Synchronous</h2>
+        <p>Creo offers two operational modes for executing applications: synchronous and asynchronous.<span class="read-more" onclick="toggleContent('post4')">Read more...</span></p>
+        <div class="full-content">
+            <p>
+                <h3>Synchronous Mode</h3><br/>                 
+                   In synchronous mode, Creo Parametric initiates application execution based on data stored in the registry file. There are two sub-modes within synchronous mode:<br/><br/>
+
+                     <i>Synchronous DLL:</i> This mode involves direct function calls for interaction. The application is launched and managed by the Pro/Engineer application, leveraging Pro/Engineer resources. It starts with a user_initialize entry point and concludes with user_terminate.<br/><br/>
+                    <i>Synchronous Multi-Process (spawned):</i> Here, interaction occurs via an Inter-Process messaging system. The application is launched as a separate entity by the Pro/Engineer application, with the main entry point. <br/><br/>
+                    <em>Note: </em>Each process within this mode can communicate by sending messages to one another, typically requesting specific operations. However, each process must wait for a return message confirming completion of the operation, resulting in one process always being in a wait state.<br/>                
+                <h3>Asynchronous Mode</h3>
+                A synchronous Mode enables simultaneous operations between the Creo Parametric Toolkit application and Creo Parametric through a multiprocess setup. The application initializes independently of Creo Parametric, then either launches or establishes a connection with a Creo Parametric process.<br/><br/>
+                <i>Simple Asynchronous: </i>In Simple Asynchronous Mode, there's no mechanism for handling requests from Creo Parametric to the Creo Parametric Toolkit application. Consequently, Creo Parametric cannot directly invoke functions within the toolkit application. Instead, both processes operate concurrently.<br/><br/>
+                <i>Fully Asynchronous:</i> In Fully Asynchronous Mode, the setup remains similar to Simple Asynchronous Mode, but with a crucial difference in how the Creo Parametric Toolkit application manages requests from Creo Parametric. Here, the application must incorporate a control loop to actively monitor and respond to messages received from Creo Parametric. It's worth noting that asynchronous applications won't be visible in the auxiliary applications dialog box.<br/><br/>          </i>
+            </p>
+        </div>
+    </div>
+    <div class="post" id="post5">
+        <h2>Setting Up An Asynchronous Application</h2>
+        <p>
+            To enable communication between your asynchronous application and Creo Parametric, you need to configure the environment variable PRO_COMM_MSG_EXE. <span class="read-more" onclick="toggleContent('post5')">Read more...</span></p>
+        <div class="full-content">
+            <p>This variable should point to the complete path of the pro_comm_msg.exe executable, located at (creo_loadpoint)\Common Files\obj\pro_comm_msg.exe. You can set PRO_COMM_MSG_EXE in the Environment Variables section within the System settings accessed through the Control Panel.The environment variable RPC_TIMEOUT establishes the maximum duration within which remote procedure calls must be carried out. It operates in seconds, with a default setting of 2000 seconds. In case the application exceeds this time limit without finishing execution, it returns the error PRO_TK_COMM_ERROR. If your application demands additional time for execution, you should adjust this variable to a higher value.</p>
+        </div>
+    </div>
+    <div class="post" id="post6">
+        <h2>Create New CAD Files</h2>
+        <p>Please follow the steps outlined below to generate a new CAD file in Creo.<span class="read-more" onclick="toggleContent('post6')">Read more...</span></p>
+        <div class="full-content">
+            <p>
+            <ol><li><p><strong>Get the template path:</strong></p>
+                <ul><li>Before starting a new CAD file, locate the template file you'll use. Templates contain predefined settings like units, layers, and components, streamlining the design process.</li></ul></li>
+                <li><p><strong>Load the template to Creo session:</strong></p>
+                <ul><li>Once you find the template, open it within Creo by navigating to its location. This action loads the template into the Creo environment for use.</li></ul></li>
+                   <p><strong>Use ProMdlFiletypeLoad() to load the object:</strong></p>
+                    <ul>This function is employed to bring an object into the current Creo session from various locations, such as disk paths, workspace paths, or commonspace paths.</li></ul></li>
+                <li><p><strong>Rename the file to the required part number:</strong></p>
+                <ul><li>After loading the template, rename the file to match the specific part number or name associated with the new CAD file. This step maintains organization and clarity in your project.</li></ul></li>
+                <p><strong>Rename the file with ProMdlRename:</strong></p>
+                <ul>Once the object is loaded, use <code>ProMdlRename</code> to change its name. This function allows you to update the object's name to better suit your project needs.</ul>
+                    <li><p><strong>Create or Retrieve a window with ProObjectwindowMdlnameCreate:</strong></p>
+                        <ul><li>This function retrieves a window and attaches the object to it. If the window is already open with the object attached, it returns the window ID. It helps manage the workspace efficiently.</li></ul></li>
+                    <li><p><strong>Activate the window:</strong></p>
+                    <ul><li>Ensure the correct window or workspace is active for working on the new CAD file. Activating the window ensures any actions or commands apply to the correct document in Creo.</li></ul></li>
+                                <p><strong>Activate the window using ProWindowActivate:</strong></p>
+                                    <ul>Ensure the appropriate window is active for working on the CAD file. Activating the window allows you to interact with the CAD model effectively within Creo.</ul></ol>    
+                                    Following these steps, you can efficiently create new CAD files in Creo</p>
+        </div>
+    </div>
+    <div class="post" id="post7">
+        <h2>Debugging Toolkit Applications</h2>
+        <p>Debugging refers to the process of identifying and resolving errors, bugs, or issues within a software application or program. It involves systematically analyzing the code, execution flow, and runtime behavior to pinpoint the root cause of unexpected behaviors or failures. Debugging typically includes techniques such as stepping through code, inspecting variable values, logging output, and using debugging tools to track down and fix issues. <span class="read-more" onclick="toggleContent('post7')">Read more...</span></p>
+        <div class="full-content">
+            <p>
+                <i>Debugging an Interactive Dll: </i>Debugging an Interactive DLL involves initiating Creo Parametric with the DLL registered and loaded, then attaching the debugger to the process xtop.exe. Breakpoints should be set within the functions you intend to debug.<br/><br/>
+                <i>Debugging a Multi-Process Application: </i><br>
+                &nbsp;<i>For Synchronous Spawn Mode: </i>Commence Creo Parametric with the application registered and launched. Attach the debugger to the application process and set breakpoints within the desired functions.<br/>
+                &nbsp;<i>For Asynchronous Spawn Mode: </i>Initiate the application from the debugger, setting a breakpoint to halt execution before the call to ProEngineerStart() or ProEngineerConnect(). This allows for debugging at the designated debug point.<br/>
+            </p>
+        </div>
+    </div>
+    <div class="post" id="post8">
+        <h2>Creo Coordinate System</h2>
+        <p>Creo Parametric and Creo Parametric TOOLKIT use the following coordinate systems:<span class="read-more" onclick="toggleContent('post8')">Read more...</span></p>
+        <div class="full-content">
+            <p>
+            <div class="markdown prose w-full break-words dark:prose-invert light"><p><strong>Solid Coordinate System</strong>: Utilized in Creo Parametric for 3D modeling, describing geometry in Cartesian coordinates for parts and assemblies. It visualizes surfaces, edges, and assembly member positions and orientations. Solid coordinates correspond to dimension values seen by users and are integral to geometry-based functions in Creo Parametric TOOLKIT.</p><p><strong>Screen Coordinate System</strong>: Acts as an intermediary for 2D positioning within the Creo Parametric window, facilitating graphics rendering and user interactions. It transforms points to screen pixels, maintaining consistency even with view adjustments like zoom and pan.</p><p><strong>Window Coordinate System</strong>: Similar to screen coordinates but tailored for screen resolution and adjustments like zoom and pan. It maps models from the screen coordinate system before rendering to screen pixels, ensuring accurate representation regardless of view modifications.</p><p><strong>Drawing Coordinate System</strong>: Employed for 2D positioning on drawing sheets, measured in drawing units. It describes positions relative to the bottom-left corner, crucial for precise drafting tasks, and often utilized by Creo Parametric TOOLKIT functions handling drawings.</p><p><strong>Drawing View Coordinate System</strong>: Used to locate entities within a drawing view, aiding accurate placement of elements within drawings for effective communication of design intent.</p><p><strong>Assembly Coordinate System</strong>: Establishes positions, orientations, and geometry of parts, subassemblies, and datum features within an assembly. Each assembly member maintains its solid coordinate system, vital for analyzing subassembly geometry relative to the parent assembly.</p><p><strong>Datum Coordinate System</strong>: A user-defined coordinate system within parts or assemblies, essential for describing geometry relative to specific reference points, often utilized in Creo Parametric TOOLKIT applications.</p><p><strong>Section Coordinate System</strong>: Unique coordinate system for each sketch, facilitating entity placement within the sketch and features. Sketches used in features may have a different coordinate system from the solid model, ensuring accurate geometry representation.</p></div>    
+            </p>
+        </div>
+    </div>
+</div>
+<br/><br/><br/>
+<footer>
+    &copy; 2024 My Blog
+</footer>
+
+</body>
+</html>
