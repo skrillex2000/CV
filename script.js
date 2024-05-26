@@ -30,6 +30,10 @@ function downloadExe() {
     document.body.removeChild(link);
 }
 
+function myalert() {
+    alert("Git is currently under development and not yet available.\n Please stay tuned for updates.\n Thank you for your interest!");
+}
+
 function downloadP2Exe() {
     // URL of the .exe file
     var exeUrl = "./assets/FaceDetectionApp.exe";
