@@ -1,82 +1,66 @@
-@media screen and (max-width: 1200px){
-    #desktop-nav{
-        display: none;
+@media screen and (max-width: 1200px) {
+    #desktop-nav {
+        padding: 0 1rem;
     }
-    #hamburger-nav{ 
-        display: flex;
+    .section-container {
+        flex-direction: column;
     }
-    #experience,.experience-detail-container{
+    .about-containers {
         margin-top: 2rem;
     }
-    #profile,.section-container{
+}
+
+@media screen and (max-width: 768px) {
+    #desktop-nav {
         display: none;
     }
-    .arrow{
-        display: none;
+    #hamburger-nav {
+        display: flex;
     }
-    section,.section-container{
-      height: fit-content;
+    #profile, #about, #experience, #project, #contact {
+        padding: 2rem 1rem;
     }
-    section{
-        margin: 0 5%;
-    }
-    .section__pic-container{
-        width: 275px;
-        height: 275px;
-        margin: 0 auto 2rem;
-    }
-    .about-containers{
-        margin-top: 0;
-    }
-} 
-@media screen and (max-width: 600px)
-{
-    #contact,footer{
-        height: 40dvh;
-    }
-    #profile{
-        height: 83vh;
-        margin-bottom: 0;
-    }
-    article{
-        font-size: 1rem;
-    }
-    footer nav{
-        height: fit-content;
-        margin-bottom: 2rem;
-    }
-    .about-containers,.contact-info-upper-container{
-        flex-wrap: wrap;
-    }
-    .contact-info-container{
-        margin: 0;
-    }
-    .logo{
-        font-size: 1.5rem;
-    }
-    .nav-links{
-        flex-direction: column;
-        gap:0.5rem;
-        text-align: center;
-    }
-    .section__pic-container{
+    .section_pic-container {
         width: auto;
-        height: 46vw;
-        justify-content: center;
+        height: auto;
+        margin: 0 auto;
     }
-    .section__text__p2{
+    .about-containers, .contact-info-upper-container {
+        flex-direction: column;
+    }
+    .contact-info-container {
+        margin: 1rem;
+    }
+    .experience-sub-title {
         font-size: 1.25rem;
     }
-    .title{
-        font-size: 2rem;
+    .project-img {
+        width: 100%;
+    }
+    .color-container {
+        margin: 1rem 0;
     }
 }
-@media screen and (max-width: 1400px){
-  #profile{
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
-  .about-containers{
-    flex-wrap: wrap;
-  }
+
+@media screen and (max-width: 480px) {
+    #profile {
+        height: auto;
+        padding-top: 4rem;
+    }
+    .section_text {
+        text-align: center;
+    }
+    .btn-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .btn {
+        width: 100%;
+    }
+    .socials-container {
+        margin: 1rem auto;
+    }
+    .arrow {
+        display: none;
+    }
 } 

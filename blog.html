@@ -214,6 +214,70 @@
             </p>
         </div>
     </div>
+    <div class="post" id="post9">
+        <h2>Unlocking Design Potential with CAD Bot</h2>
+        <p>In today's fast-paced engineering world, efficiency and accuracy are paramount. To stay competitive, companies need to leverage technology to streamline their design processes and improve overall product quality. One promising solution that is gaining traction is CAD Bot, a powerful tool that promises to revolutionize how engineers interact with CAD models.<span class="read-more" onclick="toggleContent('post9')">Read more...</span></p>
+        <div class="full-content">
+            <p>The Vision: Empowering Engineers</p>
+            <p>The core vision behind CAD Bot is to provide engineers with a powerful assistant that can quickly analyze designs, identify potential issues, and suggest improvements. By automating routine tasks and providing valuable insights, CAD Bot aims to free up engineers' time and allow them to focus on more creative and strategic aspects of their work.</p>
+            
+            <p>The Pillars of Success</p>
+            <p>To achieve this ambitious vision, the development of CAD Bot is built on three key pillars:</p>
+            <ul>
+                <li><strong>Fixing Common Errors:</strong> One of the most significant benefits of CAD Bot is its ability to automatically detect and resolve common errors that engineers encounter while working with CAD models and TeamCenter. This not only improves the efficiency of the design process but also reduces the risk of costly mistakes later in the product lifecycle.</li>
+                <li><strong>Data-Driven Checks:</strong> CAD Bot leverages the power of data to perform a wide range of checks on design models. These checks can be pre-built or customized to meet the specific needs of a particular project or team. By analyzing data in real-time, CAD Bot can provide engineers with immediate feedback and help them make informed decisions.</li>
+                <li><strong>Design Strength Analysis:</strong> By analyzing design strength and identifying potential improvements based on previous performance reviews (PRs), CAD Bot can help engineers optimize their designs for performance, durability, and cost-effectiveness. This not only leads to better products but also improves the overall return on investment for the company.</li>
+            </ul>
+    
+            <p>The Foundation: CAD Plugins</p>
+            <p>To ensure seamless integration with existing CAD systems, CAD Bot is built on a foundation of powerful CAD plugins. These plugins enable the tool to retrieve and set data to and from CAD models, providing a robust and flexible platform for analysis and optimization.</p>
+            
+            <p><strong>Conclusion</strong></p>
+            <p>CAD Bot represents a significant step forward in the evolution of engineering design tools. By automating routine tasks, providing valuable insights, and empowering engineers to make better decisions, this innovative technology has the potential to transform the way we design and manufacture products. As the tool continues to evolve and mature, we can expect to see even greater benefits in terms of efficiency, accuracy, and innovation.</p>
+        </div>
+    </div>
+    <div class="post" id="post10">
+        <h2>Connecting Ollama to a .NET Application</h2>
+        <p>Ollama is a powerful LLM that can be a valuable asset for .NET developers. By integrating Ollama into your applications, you can add capabilities like natural language processing, chatbots, and more. There are two main ways to connect Ollama to a .NET application:<span class="read-more" onclick="toggleContent('post10')">Read more...</span></p>
+        <div class="full-content">
+            <p><strong>AutoGen.Ollama:</strong> This is a popular library that simplifies the process of using Ollama in your .NET applications. To use AutoGen.Ollama, you'll first need to install the AutoGen.Ollama NuGet package. Once you've installed the package, you can use the OllamaApiClient class to interact with the Ollama model.</p>
+            <p>Here's a code snippet that demonstrates how to use AutoGen.Ollama to send a message to an Ollama model:</p>
+            <pre><code>
+    using var ollama = new OllamaApiClient();
+    var chat = ollama.Chat(
+      model: "llama3.2:3b",
+      systemMessage: "You chatbot",
+      autoCallTools: true);
+    try
+    {
+      _ = await chat.SendAsync(promt);
+    }
+    finally
+    {
+      Console.WriteLine(chat.PrintMessages());
+    }
+            </code></pre>
+    
+            <p><strong>CommunityToolkit.Aspire.Hosting.Ollama:</strong> This is another option for connecting Ollama to your .NET applications. This library provides a more integrated approach that allows you to register Ollama models as part of your application pipeline.</p>
+            <p>Here are the steps involved in connecting Ollama using CommunityToolkit.Aspire.Hosting.Ollama:</p>
+            <ol>
+                <li>Install the CommunityToolkit.Aspire.Hosting.Ollama NuGet package in your application project.</li>
+                <li>In your application's startup code, use the AddOllama extension method to add the Ollama container to the application builder.</li>
+                <li>You can then add models to the container using the AddModel extension method. This will download and run the model when your application starts.</li>
+            </ol>
+    
+            <p>Once you've connected Ollama to your .NET application, you can start interacting with the model using its API. The Ollama API provides a number of methods for sending and receiving messages, as well as for managing the model's state.</p>
+    
+            <p><strong>Additional Tips</strong></p>
+            <ul>
+                <li>Be sure to choose the right Ollama model for your needs. There are a variety of Ollama models available, each with its own strengths and weaknesses.</li>
+                <li>Take advantage of Ollama's documentation and tutorials to learn more about how to use the model effectively.</li>
+                <li>Experiment with Ollama to see how it can be used to improve your .NET applications.</li>
+            </ul>
+    
+        </div>
+    </div>
+    
 </div>
 <br/><br/><br/>
 <footer>
